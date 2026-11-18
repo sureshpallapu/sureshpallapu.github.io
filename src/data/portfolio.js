@@ -1,4 +1,4 @@
-import profileImage from "../assets/images/profile.jpg";
+import profileImage from "../assets/images/profile2.jpg";
 
 /* ============================================================
    SURESH PALLAPU - PERSONAL PORTFOLIO
@@ -96,13 +96,15 @@ research: {
   },
 
   // 2. SOCIAL PROFILES
-  social: {
-    github: "https://github.com/sureshpallapu",
-    linkedin: "https://www.linkedin.com/in/suresh-pallapu/",
-    youtube: "www.youtube.com/SureshPallapuSP",
-    website: "",
-    servicenow: "", // Add your ServiceNow portfolio website later
-  },
+
+social: {
+  github: "https://github.com/sureshpallapu",
+  linkedin: "https://www.linkedin.com/in/suresh-pallapu/",
+  youtube: "https://www.youtube.com/SureshPallapuSP",
+  website: "https://sureshpallapu.github.io/",
+  servicenow: "https://sureshpallapu.github.io/ServiceNow-hub/",
+},
+
 
   // 3. ABOUT & PROFILE STATISTICS
   about: {
@@ -295,7 +297,7 @@ projects: [
     ],
 
     image: "/images/projects/medicare-pro.png",
-    github: "",
+    github: "https://github.com/sureshpallapu/MedicareProApp.git",
     live: "",
     featured: true,
     status: "Completed",
@@ -337,7 +339,7 @@ projects: [
     ],
 
     image: "/images/projects/travel-website.png",
-    github: "",
+    github: "https://github.com/sureshpallapu/travel-booking-app.git",
     live: "",
     featured: true,
     status: "Completed",
@@ -359,7 +361,7 @@ projects: [
     ],
 
     image: "/images/projects/vidya-jyothi.png",
-    github: "",
+    github: "https://github.com/sureshpallapu/vidya-jyothi-foundation.git",
     live: "",
     featured: true,
     status: "In Development",
@@ -381,8 +383,8 @@ projects: [
     ],
 
     image: "/images/projects/personal-portfolio.png",
-    github: "",
-    live: "",
+    github: "https://github.com/sureshpallapu/sureshpallapu.github.io.git",
+    live: "https://sureshpallapu.github.io/",
     featured: true,
     status: "In Development",
   },
@@ -700,7 +702,7 @@ certifications: [
     name: "ServiceNow Platform Training",
     category: "Enterprise Platform",
     issuer: "Right Prompt Technologies",
-    duration: "Update training period",
+    duration: "2025",
     status: "Completed",
     description:
       "Training in ServiceNow platform administration, application development, ITSM modules and workflow automation.",
@@ -719,7 +721,7 @@ certifications: [
     name: "Certified System Administrator (CSA)",
     category: "ServiceNow Certification",
     issuer: "ServiceNow",
-    duration: "Update certification year",
+    duration: "2026",
     status: "Certified",
     description:
       "ServiceNow Certified System Administrator credential demonstrating knowledge of platform administration and configuration.",
@@ -738,8 +740,8 @@ certifications: [
     name: "Certified Application Developer (CAD)",
     category: "ServiceNow Certification",
     issuer: "ServiceNow",
-    duration: "Update certification year",
-    status: "Update Status",
+    duration: "2026",
+    status: "Certified",
     description:
       "ServiceNow application development learning focused on building, extending and maintaining applications on the Now Platform.",
     technologies: [
@@ -758,8 +760,8 @@ certifications: [
     name: "Certified Implementation Specialist – Data Foundations (CMDB & CSDM)",
     category: "ServiceNow Certification",
     issuer: "ServiceNow",
-    duration: "Update completion year",
-    status: "Completed",
+    duration: "2026",
+    status: "Certified",
     description:
       "Completed learning focused on CMDB fundamentals, CSDM framework, data foundations, CI relationships and configuration data management.",
     technologies: [
@@ -777,8 +779,8 @@ certifications: [
     name: "Certified Implementation Specialist – Customer Service Management (CSM)",
     category: "ServiceNow Certification",
     issuer: "ServiceNow",
-    duration: "Planned",
-    status: "Planned",
+    duration: "2026",
+    status: "Certified",
     description:
       "Professional learning goal focused on Customer Service Management implementation, case management and customer workflows.",
     technologies: [

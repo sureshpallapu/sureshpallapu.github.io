@@ -432,10 +432,7 @@ const Hero = () => {
                   {/* Avatar Image */}
                   <div className="relative flex h-28 w-28 items-center justify-center overflow-hidden rounded-full border-2 border-violet-500 bg-gradient-to-br from-[#222033] to-[#101116]">
 
-                    <span className="text-4xl font-extrabold text-white">
-                      {personal.firstName.charAt(0)}
-                      {personal.lastName.charAt(0)}
-                    </span>
+                    
 
                <img
   src={personal.profileImage}
