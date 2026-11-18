@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sureshpallapu.github.io/sitemap.xml
-
