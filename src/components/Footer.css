@@ -8,7 +8,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 65px 6% 25px;
+  padding: 65px 6% 28px;
   background:
     radial-gradient(
       ellipse at 10% 0%,
@@ -17,7 +17,7 @@
     ),
     radial-gradient(
       ellipse at 90% 100%,
-      rgba(139, 92, 246, 0.07),
+      rgba(139, 92, 246, 0.08),
       transparent 40%
     ),
     #080b14;
@@ -39,14 +39,14 @@
     #8b5cf6,
     transparent
   );
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .footer-container {
   position: relative;
   z-index: 1;
-  max-width: 1260px;
   width: 100%;
+  max-width: 1260px;
   margin: 0 auto;
 }
 
@@ -57,7 +57,7 @@
 .footer-main {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr 1fr;
-  gap: 75px;
+  gap: 65px;
   padding-bottom: 48px;
   align-items: start;
 }
@@ -74,15 +74,16 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
+  color: #22d3ee;
   font-size: 25px;
   font-weight: 850;
   letter-spacing: -0.8px;
-  color: #22d3ee;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .footer-logo svg {
+  flex-shrink: 0;
   color: #22d3ee;
   transition: transform 0.3s ease;
 }
@@ -265,8 +266,8 @@
 ========================================== */
 
 .footer-divider {
-  height: 1px;
   width: 100%;
+  height: 1px;
   margin-bottom: 24px;
   background: linear-gradient(
     90deg,
@@ -280,16 +281,22 @@
    COPYRIGHT
 ========================================== */
 
+
+/* ==========================================
+   COPYRIGHT - FIRST LINE
+========================================== */
+
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .footer-bottom p {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 4px;
@@ -304,71 +311,68 @@
 }
 
 .footer-heart {
+  display: inline-block;
   color: #f472b6;
-  vertical-align: middle;
-  animation: footerHeartbeat 1.5s ease-in-out infinite;
-}
-
-@keyframes footerHeartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
 }
 
 /* ==========================================
-   BACK TO TOP
-========================================== */
-
-.footer-back-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  border-radius: 9px;
-  background: rgba(34, 211, 238, 0.04);
-  color: #22d3ee;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-back-top:hover {
-  background: rgba(34, 211, 238, 0.12);
-  border-color: #22d3ee;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 18px rgba(34, 211, 238, 0.12);
-}
-
-/* ==========================================
-   DEVELOPER CREDIT
+   DEVELOPER CREDIT - SECOND LINE
 ========================================== */
 
 .footer-credit {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 9px;
-  margin-top: 23px;
-  color: #22d3ee;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(148, 163, 184, 0.10);
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 600;
   text-align: center;
-  transition: all 0.3s ease;
 }
 
 .footer-credit svg {
-  color: #8b5cf6;
+  color: #a78bfa;
+  flex-shrink: 0;
 }
 
-.footer-credit:hover {
-  text-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+.footer-credit strong {
+  background: linear-gradient(
+    100deg,
+    #22d3ee,
+    #60a5fa,
+    #c084fc
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .footer-credit {
+    gap: 7px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer-credit strong {
+    font-size: 13px;
+  }
+}
+
 
 /* ==========================================
    TABLET
@@ -424,8 +428,13 @@
   }
 
   .footer-credit {
+    gap: 7px;
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.8;
+  }
+
+  .footer-credit strong {
+    font-size: 13px;
   }
 }
 
@@ -439,5 +448,6 @@
   .portfolio-footer *::after {
     animation: none !important;
     transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

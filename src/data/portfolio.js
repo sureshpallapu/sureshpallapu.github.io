@@ -1,4 +1,6 @@
 import profileImage from "../assets/images/profile2.jpg";
+import portfolioImage from "../assets/images/Portfolio.png";
+import vidyaJyothiImage from "../assets/images/VidyaJyothiFoundation.png";
 
 /* ============================================================
    SURESH PALLAPU - PERSONAL PORTFOLIO
@@ -360,7 +362,7 @@ projects: [
       "MySQL",
     ],
 
-    image: "/images/projects/vidya-jyothi.png",
+    image: vidyaJyothiImage,
     github: "https://github.com/sureshpallapu/vidya-jyothi-foundation.git",
     live: "",
     featured: true,
@@ -382,7 +384,7 @@ projects: [
       "Framer Motion",
     ],
 
-    image: "/images/projects/personal-portfolio.png",
+    image: portfolioImage,
     github: "https://github.com/sureshpallapu/sureshpallapu.github.io.git",
     live: "https://sureshpallapu.github.io/",
     featured: true,
@@ -414,86 +416,84 @@ projects: [
 
 
 // 6. PROFESSIONAL EXPERIENCE
+
 experience: [
   {
     id: 1,
-
     company: "Right Prompt Technologies Pvt Ltd",
     position: "Associate Software Developer",
-
     location: "Bangalore, India",
-
     duration: "July 2025 – Present",
-
     startDate: "July 2025",
     endDate: "Present",
-
     employmentType: "Full Time",
 
     description:
-      "Working on ServiceNow platform development and automation.",
+      "Working as an Associate Software Developer with a focus on ServiceNow development, ITSM solutions, platform configuration and workflow automation.",
 
     responsibilities: [
-      "Working on ServiceNow platform development and automation.",
-
-      "Developing and customizing ITSM modules, UI Policies, and Business Rules.",
-
-      "Building REST API integrations and handling client-side scripting with JavaScript.",
-
-      "Collaborating with teams to enhance workflow automation and service delivery.",
+      "Working as a ServiceNow Developer on enterprise ITSM development, configuration and support.",
+      "Configuring and customizing Incident, Problem, Change and Request Management processes.",
+      "Developing Business Rules, Client Scripts, Script Includes, UI Policies and UI Actions using JavaScript.",
+      "Building automated workflows, approvals and reusable processes using Flow Designer.",
+      "Working with REST APIs and integrations to support communication between ServiceNow and external systems.",
+      "Supporting CMDB and ITOM activities, including configuration item management and platform data maintenance.",
+      "Collaborating with team members to troubleshoot issues, implement enhancements and improve service delivery."
     ],
 
     technologies: [
       "ServiceNow",
-      "JavaScript",
-      "REST API",
       "ITSM",
-      "UI Scripting",
+      "JavaScript",
+      "GlideRecord",
+      "Business Rules",
+      "Client Scripts",
+      "Flow Designer",
+      "REST APIs",
+      "CMDB",
+      "ITOM"
     ],
 
-    current: true,
+    current: true
   },
 
   {
     id: 2,
-
     company: "Pentagon Space",
     position: "Java Full Stack Developer Trainee",
-
     location: "Bangalore, India",
-
     duration: "November 2024 – June 2025",
-
     startDate: "November 2024",
     endDate: "June 2025",
-
     employmentType: "Training",
 
     description:
-      "Completed hands-on Java Full Stack Developer training with practical application development.",
+      "Completed practical Java Full Stack Developer training focused on building web applications and developing end-to-end software solutions.",
 
     responsibilities: [
-      "Hands-on training in Core Java, Advanced Java, Spring Boot, and React.js.",
-
-      "Built full-stack web applications with RESTful APIs and MySQL backend.",
-
-      "Focused on writing clean, maintainable, and scalable code.",
-
-      "Developed UI components with React and optimized front-end performance.",
+      "Completed hands-on training in Core Java, Advanced Java, Spring Boot and React.js.",
+      "Developed full-stack web applications using RESTful APIs and MySQL.",
+      "Built responsive user interfaces using HTML, CSS and JavaScript.",
+      "Practiced writing clean, reusable and maintainable application code.",
+      "Worked on database integration, application development and debugging."
     ],
 
     technologies: [
       "Java",
+      "Advanced Java",
       "Spring Boot",
       "React.js",
       "MySQL",
-      "REST API",
-      "HTML/CSS/JS",
+      "REST APIs",
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
 
-    current: false,
-  },
+    current: false
+  }
 ],
+
 
 
  
@@ -515,58 +515,58 @@ education: [
   status: "Currently Pursuing",
   current: true,
 
-  description:
-    "Pursuing doctoral research in Computer Science through AP-RCET at Sri Venkateswara University. Exploring advanced software engineering, Artificial Intelligence, Machine Learning, and performance optimization techniques for developing scalable and intelligent healthcare applications.",
+ description:
+  "Pursuing doctoral research in Computer Science, focusing on Natural Language Processing (NLP) techniques for automated bug detection and program repair. Exploring how AI and language models can understand software bug reports, identify defects, recommend solutions, and assist in generating corrected code.",
 
-  highlights: [
-    "Doctoral research in Computer Science and emerging technologies.",
-    "Exploring Artificial Intelligence and Machine Learning applications.",
-    "Research interests in Generative AI and intelligent healthcare systems.",
-    "Exploring AI-assisted automation, predictive analytics, and data-driven solutions.",
-    "Research methodology, experimental validation, and academic development.",
-  ],
+highlights: [
+  "Research focus on NLP for Bug Detection and Automated Program Repair.",
+  "Exploring AI and language models for understanding software bug reports.",
+  "Investigating automated defect localization and bug analysis.",
+  "Exploring intelligent approaches for recommending and generating code fixes.",
+  "Studying research methodologies, experimentation, and evaluation techniques.",
+],
 
-  // research: {
-  //   proposedTitle:
-  //     "Design and Performance Optimization of Scalable Java-Based Web Applications for Healthcare Systems",
+//   research: {
+//   proposedTitle:
+//     "NLP for Bug Detection and Automated Program Repair",
 
-  //   titleStatus:
-  //     "Proposed research direction – final title to be confirmed",
+//   titleStatus:
+//     "Provisional research direction – final research title subject to guide approval",
 
-  //   domain: "Software Engineering & Healthcare Technology",
+//   domain: "Natural Language Processing & Software Engineering",
 
-  //   areas: [
-  //     "Artificial Intelligence (AI)",
-  //     "Machine Learning (ML)",
-  //     "Generative AI",
-  //     "Java-Based Applications",
-  //     "Software Engineering",
-     
-  //   ],
+//   areas: [
+//     "Natural Language Processing (NLP)",
+//     "Artificial Intelligence",
+//     "Machine Learning",
+//     "Large Language Models (LLMs)",
+//     "Bug Report Analysis",
+//     "Defect Localization",
+//     "Automated Program Repair",
+//     "Code Generation"
+//   ],
 
-  //   researchInterests: [
-  //     "AI-Assisted Healthcare Applications",
-  //     "Machine Learning for Healthcare Data Analysis",
-  //     "Intelligent Automation and Decision Support",
-  //     "Generative AI Integration in Web Applications",
-  //     "Performance Evaluation of AI-Enabled Applications",
-  //     "Scalable and Reliable Healthcare Software Systems"
-  //   ],
+//   researchInterests: [
+//     "Understanding Software Bug Reports",
+//     "Automated Defect Detection",
+//     "AI-Assisted Bug Localization",
+//     "Automated Code Fix Recommendations",
+//     "LLM-Based Program Repair",
+//     "Evaluation of Generated Code Fixes"
+//   ],
 
-  //   technologies: [
-  //     "Java",
-  //     "Spring Boot",
-  //     "Python",
-  //     "Artificial Intelligence",
-  //     "Machine Learning",
-  //     "Generative AI",
-  //     "React.js",
-  //     "REST APIs",
-  //     "MySQL"
-  //   ]
-  // },
-
-  achievements: [
+//   technologies: [
+//     "Python",
+//     "Natural Language Processing",
+//     "Machine Learning",
+//     "Large Language Models",
+//     "Java",
+//     "Git",
+//     "Software Engineering"
+//   ]
+// },
+  
+achievements: [
     "Qualified through AP-RCET",
     "Doctoral research journey started in 2026",
     "Research focus established in Computer Science",
