@@ -124,15 +124,14 @@ const handleSubmit = async (e) => {
 
   const form = e.currentTarget;
 
-  setFormStatus("sending");
-  setFeedback("");
+setFormStatus("sending");
+setFeedback("Sending your message. Please wait...");
 
   try {
     const formData = new FormData(form);
 
     const response = await fetch(
-      "https://formsubmit.co/ajax/pallapusuresh2000@gmail.com",
-      {
+`https://formsubmit.co/ajax/${RECEIVER_EMAIL}`,      {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -154,12 +153,12 @@ const handleSubmit = async (e) => {
       );
 
       form.reset();
-
+setFormData(initialFormData);
       // Clear the success message after 6 seconds.
-      setTimeout(() => {
-        setFormStatus("idle");
-        setFeedback("");
-      }, 6000);
+      // setTimeout(() => {
+      //   setFormStatus("idle");
+      //   setFeedback("");
+      // }, 6000);
     } else {
       throw new Error(
         data.message || "Unable to send your message. Please try again."

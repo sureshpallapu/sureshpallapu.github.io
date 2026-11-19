@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -12,7 +13,6 @@ import {
 } from "lucide-react";
 
 import { portfolioData } from "../data/portfolio";
-
 import "./Projects.css";
 
 const containerVariants = {
@@ -39,8 +39,11 @@ const cardVariants = {
   },
 };
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project }) {
   const isComingSoon = project.comingSoon;
+  const [imageError, setImageError] = useState(false);
+
+  const showImage = project.image && !imageError;
 
   return (
     <motion.article
@@ -58,36 +61,39 @@ function ProjectCard({ project, index }) {
       }
       layout
     >
-
       {/* PROJECT IMAGE */}
       <div className="project-image-wrapper">
 
-        {project.image ? (
+        {showImage && (
           <img
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} project preview`}
             className="project-image"
             loading="lazy"
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-            }}
+            onError={() => setImageError(true)}
           />
-        ) : null}
+        )}
+
+        {/* Show placeholder only when image is unavailable */}
+        {!showImage && (
+          <div className="project-image-content">
+            {isComingSoon ? (
+              <Rocket size={48} />
+            ) : (
+              <FolderGit2 size={48} />
+            )}
+
+            <span>
+              {isComingSoon
+                ? "UPCOMING PROJECT"
+                : "PROJECT PREVIEW"}
+            </span>
+          </div>
+        )}
 
         <div className="project-image-overlay" />
 
-        <div className="project-image-content">
-          {isComingSoon ? (
-            <Rocket size={48} />
-          ) : (
-            <FolderGit2 size={48} />
-          )}
-
-          <span>
-            {isComingSoon ? "UPCOMING PROJECT" : "PROJECT PREVIEW"}
-          </span>
-        </div>
-
+        {/* PROJECT STATUS */}
         <span
           className={`project-status ${
             isComingSoon
@@ -113,7 +119,6 @@ function ProjectCard({ project, index }) {
             <ArrowUpRight size={23} />
           </div>
         )}
-
       </div>
 
       {/* PROJECT DETAILS */}
@@ -136,7 +141,7 @@ function ProjectCard({ project, index }) {
         </div>
 
         <div className="project-technologies">
-          {project.technologies.map((tech) => (
+          {(project.technologies || []).map((tech) => (
             <span key={tech} className="project-tech-tag">
               {tech}
             </span>
@@ -153,7 +158,7 @@ function ProjectCard({ project, index }) {
             </div>
           ) : (
             <>
-              {project.github ? (
+              {project.github && (
                 <a
                   href={project.github}
                   target="_blank"
@@ -161,18 +166,13 @@ function ProjectCard({ project, index }) {
                   className="project-link github-link"
                   aria-label={`View ${project.title} GitHub repository`}
                 >
-                 <GitBranch size={17} />
+                  <GitBranch size={17} />
                   GitHub
                   <ArrowUpRight size={14} />
                 </a>
-              ) : (
-                <span className="project-link project-link-disabled">
-                <GitBranch size={17} />
-                  GitHub pending
-                </span>
               )}
 
-              {project.live ? (
+              {project.live && (
                 <a
                   href={project.live}
                   target="_blank"
@@ -182,26 +182,41 @@ function ProjectCard({ project, index }) {
                 >
                   <ExternalLink size={16} />
                   Live Demo
+                  <ArrowUpRight size={14} />
                 </a>
-              ) : (
-                <span className="project-link project-link-disabled">
-                  <ExternalLink size={16} />
-                  Demo pending
+              )}
+
+              {!project.github && !project.live && (
+                <span className="coming-soon-message">
+                  <Sparkles size={15} />
+                  Project details coming soon
                 </span>
               )}
             </>
           )}
 
         </div>
-
       </div>
-
     </motion.article>
   );
 }
 
 export default function Projects() {
   const projects = portfolioData.projects || [];
+
+  const actualProjects = projects.filter(
+    (project) => !project.comingSoon
+  );
+
+  const technologyCount = new Set(
+    actualProjects.flatMap(
+      (project) => project.technologies || []
+    )
+  ).size;
+
+  const featuredCount = actualProjects.filter(
+    (project) => project.featured
+  ).length;
 
   return (
     <section id="projects" className="projects-section">
@@ -223,7 +238,6 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-
           <span className="projects-eyebrow">
             <Code2 size={15} />
             MY DEVELOPMENT JOURNEY
@@ -239,7 +253,6 @@ export default function Projects() {
           </p>
 
           <div className="projects-heading-line" />
-
         </motion.div>
 
         {/* PROJECT STATISTICS */}
@@ -247,31 +260,22 @@ export default function Projects() {
 
           <div className="projects-stat">
             <FolderGit2 size={21} />
-            <strong>
-              {projects.filter((p) => !p.comingSoon).length}
-            </strong>
+            <strong>{actualProjects.length}</strong>
             <span>PROJECTS</span>
           </div>
 
           <div className="projects-stat">
             <Code2 size={21} />
-            <strong>
-              {new Set(
-                projects
-                  .filter((p) => !p.comingSoon)
-                  .flatMap((p) => p.technologies)
-              ).size}
-            </strong>
+            <strong>{technologyCount}</strong>
             <span>TECHNOLOGIES</span>
           </div>
 
           <div className="projects-stat">
             <Sparkles size={21} />
-            <strong>
-              {projects.filter((p) => p.featured).length}
-            </strong>
+            <strong>{featuredCount}</strong>
             <span>FEATURED WORKS</span>
           </div>
+
         </div>
 
         {/* PROJECT GRID */}
@@ -282,11 +286,10 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
-              index={index}
             />
           ))}
         </motion.div>

@@ -4,9 +4,8 @@ import {
   MapPin,
   Mail,
   Phone,
-  ArrowUpRight,
   Code2,
-  Heart,
+  ArrowUp,
 } from "lucide-react";
 
 import {
@@ -36,36 +35,12 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    {
-      name: "LinkedIn",
-      url: social?.linkedin,
-      icon: FaLinkedinIn,
-    },
-    {
-      name: "GitHub",
-      url: social?.github,
-      icon: FaGithub,
-    },
-    {
-      name: "Twitter / X",
-      url: social?.twitter,
-      icon: FaXTwitter,
-    },
-    {
-      name: "Instagram",
-      url: social?.instagram,
-      icon: FaInstagram,
-    },
-    {
-      name: "YouTube",
-      url: social?.youtube,
-      icon: FaYoutube,
-    },
-    {
-      name: "Website",
-      url: social?.website,
-      icon: FaGlobe,
-    },
+    { name: "LinkedIn", url: social?.linkedin, icon: FaLinkedinIn },
+    { name: "GitHub", url: social?.github, icon: FaGithub },
+    { name: "Twitter / X", url: social?.twitter, icon: FaXTwitter },
+    { name: "Instagram", url: social?.instagram, icon: FaInstagram },
+    { name: "YouTube", url: social?.youtube, icon: FaYoutube },
+    { name: "Website", url: social?.website, icon: FaGlobe },
   ].filter(
     (item) =>
       item.url &&
@@ -87,7 +62,7 @@ const Footer = () => {
 
           {/* BRAND SECTION */}
           <div className="footer-brand">
-            <a href="#home" className="footer-logo">
+            <a href="#home" className="footer-logo" aria-label="Go to homepage">
               <Code2 size={30} strokeWidth={2.5} />
               <span>
                 SURESH <strong>PALLAPU</strong>
@@ -95,9 +70,9 @@ const Footer = () => {
             </a>
 
             <p className="footer-description">
-              Passionate software developer crafting efficient
-              and scalable solutions using Java, ServiceNow,
-              and modern web technologies.
+              Passionate software developer crafting efficient and
+              scalable solutions using Java, ServiceNow, and modern
+              web technologies.
             </p>
 
             <div className="footer-socials">
@@ -123,7 +98,7 @@ const Footer = () => {
                 <a
                   href={`mailto:${email}`}
                   className="footer-social-link"
-                  aria-label="Email"
+                  aria-label="Send email"
                   title="Email"
                 >
                   <Mail size={19} />
@@ -133,7 +108,7 @@ const Footer = () => {
           </div>
 
           {/* QUICK LINKS */}
-          <div className="footer-links">
+          <nav className="footer-links" aria-label="Footer navigation">
             <h3>Quick Links</h3>
 
             <ul>
@@ -146,7 +121,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* CONTACT SECTION */}
           <div className="footer-contact">
@@ -182,36 +157,32 @@ const Footer = () => {
         {/* FOOTER DIVIDER */}
         <div className="footer-divider" />
 
-        {/* COPYRIGHT */}
-       <div className="border-t border-white/10 mt-10 pt-6 pb-4">
-  <div className="flex flex-col items-center justify-center text-center gap-3">
-
-    {/* Copyright */}
-    <p className="text-sm text-slate-400">
-      © {new Date().getFullYear()}{" "}
-      <span className="font-semibold text-cyan-400">
-        Suresh Pallapu.
-      </span>{" "}
-      All Rights Reserved. | Built with{" "}
-      <span className="text-pink-500">♥</span> and code.
-    </p>
-
-    {/* Developer Credit */}
-    <p className="flex items-center justify-center gap-2 text-sm font-semibold
-      bg-gradient-to-r from-cyan-400 to-purple-500
-      bg-clip-text text-transparent">
-      <span className="text-purple-400">{"</>"}</span>
-      Designed & Developed by Suresh Pallapu
-    </p>
-
-  </div>
+        {/* COPYRIGHT AND BACK TO TOP */}
+        
+{/* COPYRIGHT */}
+<div className="footer-bottom">
+  <p>
+    © {new Date().getFullYear()}{" "}
+    <strong>Suresh Pallapu.</strong>
+    {" "}All Rights Reserved. | Built with{" "}
+    <span className="footer-heart">♥</span>{" "}
+    and code.
+  </p>
 </div>
 
-        
-
-      </div>
-    </footer>
-  );
+{/* DEVELOPER CREDIT */}
+<div className="footer-credit">
+  <Code2 size={18} />
+  <span>Designed & Developed by</span>
+  <strong>SURESH PALLAPU</strong>
+</div>
+</div>
+</footer>
+);
 };
 
 export default Footer;
+
+
+
+

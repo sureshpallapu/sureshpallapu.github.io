@@ -139,7 +139,7 @@ const Education = () => {
 
           {[
             {
-              value: "05",
+             value: String(education.length).padStart(2, "0"),
               label: "QUALIFICATIONS",
               icon: GraduationCap,
             },
@@ -486,17 +486,19 @@ const Education = () => {
 
                     <div className="mt-4 flex flex-wrap gap-2">
 
-                      {item.research.areas.map((area) => (
-
-                        <span
-                          key={area}
-                          className="rounded-lg border border-violet-400/20 bg-violet-400/[0.08] px-2.5 py-1.5 text-[9px] font-medium text-violet-200 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
-                        >
-                          {area}
-                        </span>
-
-                      ))}
-
+                     {Array.isArray(item.research?.areas) &&
+  item.research.areas.length > 0 && (
+    <div className="mt-4 flex flex-wrap gap-2">
+      {item.research.areas.map((area) => (
+        <span
+          key={area}
+          className="rounded-lg border border-violet-400/20 bg-violet-400/[0.08] px-2.5 py-1.5 text-[9px] font-medium text-violet-200 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
+        >
+          {area}
+        </span>
+      ))}
+    </div>
+  )}
                     </div>
 
                   </div>
